@@ -1,12 +1,27 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text,Image, TextInput, TouchableOpacity } from 'react-native';
 
 const Home = ({ route }) => {
-  const { userName } = route.params;
-
+  
   return (
     <View style={styles.container}>
-      <Text style={styles.welcomeText}>Welcome, {userName}!</Text>
+        <View style={styles.head}>
+          <View style={styles.text}>
+              <Text style={styles.welcomeText}>Nana Afua Antwiwaa Conduah </Text>
+              <Text style={{color:"#95969D", fontSize:18}}>nanaafua@gmail.com </Text>
+          </View>
+              <Image source={require("./assets/Ellipse.png")}/>
+        </View>  
+        <View style={{flexDirection:"row", justifyContent:"space-evenly", marginTop:50}}>
+            <TextInput style={styles.input} placeholder='search for a job or position'/>
+            <TouchableOpacity><View style={{backgroundColor:"#E1E2E6",borderRadius:12,padding:15,}}>
+            <Image  source={require("./assets/Filter.png")}/></View></TouchableOpacity>
+        </View>
+              
+          <View style={{flexDirection:"row" , marginLeft:30,marginRight:30,marginTop:40,justifyContent:"space-between"}}>
+            <Text style={{color:"#0D0D26",fontSize:20,fontWeight:"bold"}}>Featured Jobs</Text>
+           <TouchableOpacity><View><Text style={{textDecorationLine:"underline"}} >See all</Text></View></TouchableOpacity>
+          </View>  
     </View>
   );
 };
@@ -14,13 +29,25 @@ const Home = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    
   },
   welcomeText: {
     fontSize: 24,
     fontWeight: 'bold',
   },
+  head:{
+    flexDirection:"row",
+    justifyContent:"space-around",
+    marginTop:50
+  },
+   input:{
+      padding:9,
+      width:250,
+      backgroundColor:"#E1E2E6",
+      borderRadius:15,
+      borderColor:"#E1E2E6"
+   }
+   
 });
 
 export default Home;
