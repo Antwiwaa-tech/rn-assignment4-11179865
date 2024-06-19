@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, ScrollView } from 'react-native';
-import Personpage from './Personpage';
-import JobCard from './Jobcard';
-import Popularjobs from './Popularjobs';
+import Personpage from './components/Personpage';
+import JobCard from './components/Jobcard';
+import Popularjobs from './components/Popularjobs';
 
 const Home = ({ route }) => {
   const jobDetails = [
